@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "d449b9df-d4bb-45e8-b8c6-a7bd38cebd11",
+		"name": "Chatroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27070875"
+	},
+	"item": [
+		{
+			"name": "All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"username\": \"Faheem 2\",\n   \"password\": \"tester2\",\n   \"email\": \"faheem2@test.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/41c50105-8642-47ae-9cca-4b81823b975e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"41c50105-8642-47ae-9cca-4b81823b975e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All chatrooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/chatrooms",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chatrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Chatroom",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"participants\": [\n        \"41c50105-8642-47ae-9cca-4b81823b975e\",\n        \"07552dbe-0f74-442f-9c6f-ef4af9fa4dc3\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/chatrooms/48cb2b6a-ab0e-426b-8fcf-f377857eb608",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chatrooms",
+						"48cb2b6a-ab0e-426b-8fcf-f377857eb608"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Chatroom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"participants\": [\n        \"41c50105-8642-47ae-9cca-4b81823b975e\",\n        \"07552dbe-0f74-442f-9c6f-ef4af9fa4dc3\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/chatrooms",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chatrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sender_id\": \"41c50105-8642-47ae-9cca-4b81823b975e\",\n  \"content\": \"Test message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/messages/48cb2b6a-ab0e-426b-8fcf-f377857eb608",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"48cb2b6a-ab0e-426b-8fcf-f377857eb608"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/messages/48cb2b6a-ab0e-426b-8fcf-f377857eb608",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"48cb2b6a-ab0e-426b-8fcf-f377857eb608"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

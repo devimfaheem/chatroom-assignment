@@ -1,8 +1,10 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
+const db = process.env.DATABASE_URI || 'mongodb://localhost:27017/chatroom';
+console.log(db);
 const config: TypeOrmModuleOptions = {
   type: 'mongodb',
-  url: 'mongodb://localhost:27017/chatroom',
+  url: db,
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: true,
 };

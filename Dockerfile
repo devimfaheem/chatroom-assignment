@@ -1,26 +1,34 @@
-# Use Node.js version 14 as the base image
-FROM node:14
+# Step 1: Build the NestJS application with Nest CLI
+FROM node:alpine as builder
 
-# Install MongoDB
-RUN apt-get update && apt-get install -y mongodb
-
-# Create and set the working directory in the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the container
+RUN apk add --no-cache bash
+
+RUN npm install -g @nestjs/cli
+
 COPY package*.json ./
 
-# Install dependencies
 RUN npm install
 
-# Install dependencies
-RUN npm run build
-
-# Copy the rest of the application code to the container
 COPY . .
 
-# Expose port 3000 for the application to listen on
+RUN npm run build
+
+# Step 2: Run the NestJS application with MongoDB
+FROM node:alpine
+
+WORKDIR /app
+
+COPY --from=builder /usr/local/bin/nest /usr/local/bin/nest
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/dist ./dist
+
+RUN npm install --only=production
+
+# Expose port 3000 for NestJS application
 EXPOSE 3000
 
-# Start MongoDB and the application
-CMD ["mongod", "&", "npm", "run start:prod"]
+# Start NestJS application
+CMD ["npm", "run", "start:prod" ]
+
