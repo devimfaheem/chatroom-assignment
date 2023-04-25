@@ -12,5 +12,5 @@ export class ResponseMessageDto {
   chatroom_id: string;
   sender_id: string;
   content: string;
-  created_at: string;
+  created_at: Date;
 }

@@ -5,7 +5,7 @@ import {
   CreateChatroomDto,
   ResponseChatroomDto,
   UpdateChatroomDto,
-} from 'src/dto/chatrooms.dto';
+} from '../dto/chatrooms.dto';
 
 @Controller('chatrooms')
 @ApiTags('chatrooms')

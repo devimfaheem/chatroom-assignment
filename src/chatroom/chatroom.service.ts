@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Chatroom } from '../entities/chatrooms.entity';
 import { v4 as uuidv4 } from 'uuid';
-import { ResponseChatroomDto } from 'src/dto/chatrooms.dto';
+import { ResponseChatroomDto } from '../dto/chatrooms.dto';
 
 @Injectable()
 export class ChatroomService {

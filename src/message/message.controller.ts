@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { MessagesService } from './message.service';
 import { ApiTags, ApiBody, ApiResponse } from '@nestjs/swagger';
-import { CreateMessageDto, ResponseMessageDto } from 'src/dto/messages.dto';
+import { CreateMessageDto, ResponseMessageDto } from '../dto/messages.dto';
 
 @Controller('messages')
 @ApiTags('messages')

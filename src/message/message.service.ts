@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ResponseMessageDto } from 'src/dto/messages.dto';
+import { ResponseMessageDto } from '../dto/messages.dto';
 import { Repository } from 'typeorm';
 import { Message } from '../entities/messages.entity';
 
